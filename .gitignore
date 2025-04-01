@@ -6,7 +6,6 @@ _site/
 .sass-cache/
 .jekyll-cache/
 .jekyll-metadata
-theme: jekyll-theme-minimal
 
 
 # Additional Ruby/bundler ignore for when you run: bundle install
