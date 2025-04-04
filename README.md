@@ -285,3 +285,61 @@ Este proceso se conoce como **NAT dinámico** o **PAT (Port Address Translation)
 
 
 ---
+
+#Proyecto de VLANs con Router-on-a-Stick
+
+Este proyecto simula una red con múltiples VLANs separadas por roles o departamentos: Arquitectos, Escribas, Comercio y Mercaderes. Todas las VLANs están interconectadas a través de un router configurado como **Router-on-a-Stick**, el cual enruta el tráfico entre ellas utilizando subinterfaces.
+
+---
+
+##Topología de Red
+
+- **Router**: Router-on-a-Stick (modelo 1941)
+- **Switch central**: 2960-24TT
+- **VLANs configuradas**:
+  - VLAN 10 - Arquitectos
+  - VLAN 20 - Escribas
+  - VLAN 30 - Comercio
+  - VLAN 40 - Mercaderes
+
+---
+
+##Configuración de Subredes y Subinterfaces
+
+| VLAN | Nombre       | Subred            | Dispositivos         | IPs de Dispositivos | IP del Router |
+|------|--------------|-------------------|-----------------------|---------------------|----------------|
+| 10   | Arquitectos  | 192.168.10.0/24   | PC0, PC1              | .2, .3               | 192.168.10.1   |
+| 20   | Escribas     | 192.168.20.0/24   | PC2, PC3              | .2, .3               | 192.168.20.1   |
+| 30   | Comercio     | 192.168.30.0/24   | Smartphone2, Smartphone4 | .2, .3           | 192.168.30.1   |
+| 40   | Mercaderes   | 192.168.40.0/24   | Servidor              | .2                   | 192.168.40.1   |
+
+---
+
+##Configuración del Router
+
+```bash
+enable
+configure terminal
+
+interface GigabitEthernet0/0.10
+ encapsulation dot1Q 10
+ ip address 192.168.10.1 255.255.255.0
+ no shutdown
+
+interface GigabitEthernet0/0.20
+ encapsulation dot1Q 20
+ ip address 192.168.20.1 255.255.255.0
+ no shutdown
+
+interface GigabitEthernet0/0.30
+ encapsulation dot1Q 30
+ ip address 192.168.30.1 255.255.255.0
+ no shutdown
+
+interface GigabitEthernet0/0.40
+ encapsulation dot1Q 40
+ ip address 192.168.40.1 255.255.255.0
+ no shutdown
+
+interface GigabitEthernet0/0
+ no shutdown
