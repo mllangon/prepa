@@ -137,6 +137,7 @@ UDP es un protocolo no orientado a la conexión que proporciona una comunicació
 | Uso típico                | HTTP, FTP, Email                  | Streaming, DNS, Juegos en línea  |
 
 
+![Comparison of TCP and UDP Processes - visual selection](https://github.com/user-attachments/assets/097c3860-c786-426e-994d-ec9b2cc0722f)
 
 
 ---
