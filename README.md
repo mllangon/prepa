@@ -1,5 +1,7 @@
 # prepa
-# Modelo OSI: Definición Técnico-Práctica
+#Parte I
+---
+# Pregunta 1: Modelo OSI
 
 El modelo OSI (Open Systems Interconnection) es un marco de referencia conceptual que define cómo los datos se transmiten a través de una red en siete capas jerárquicas. Cada capa tiene funciones específicas y trabaja con las capas adyacentes para garantizar una comunicación eficiente y estandarizada entre dispositivos.
 
@@ -76,7 +78,7 @@ El modelo OSI (Open Systems Interconnection) es un marco de referencia conceptua
 
 
 ---
-# Procesos TCP y UDP: Definición Técnico-Práctica
+# Pregunta 2: Procesos TCP y UDP: Definición Técnico-Práctica
 
 En el modelo de comunicaciones de redes, los protocolos TCP y UDP pertenecen a la **Capa de Transporte**. Ambos permiten que los datos se transmitan entre aplicaciones en diferentes dispositivos a través de la red, pero tienen diferencias clave en cuanto a fiabilidad, velocidad y complejidad.
 
@@ -141,7 +143,7 @@ UDP es un protocolo no orientado a la conexión que proporciona una comunicació
 
 ---
 
-# División de la red 192.168.50.0 en 4 subredes iguales
+# Pregunta 3: División de la red 192.168.50.0 en 4 subredes iguales
 
 ## Dirección base
 - Dirección de red: `192.168.50.0`
@@ -189,7 +191,7 @@ Una red `/26` deja **6 bits para hosts**:
 
 ---
 
-# Routers, Tablas de Enrutamiento y Tipos de Enrutamiento
+# Pregunta 4: Routers, Tablas de Enrutamiento y Tipos de Enrutamiento
 
 ## ¿Qué es un router?
 
@@ -251,7 +253,7 @@ Una **tabla de enrutamiento** es una estructura interna que contiene las rutas c
 
 ---
 
-# NAT (Network Address Translation)
+# Pregunta 5: NAT (Network Address Translation)
 
 ## ¿Qué técnica representa?
 
@@ -284,6 +286,8 @@ Este proceso se conoce como **NAT dinámico** o **PAT (Port Address Translation)
 ![Understanding Network Address Translation (NAT) - visual selection](https://github.com/user-attachments/assets/91415af0-a364-4dc5-8805-189f9f929d6c)
 
 
+---
+PARTE II
 ---
 
 # Proyecto de VLANs con Router-on-a-Stick
@@ -343,3 +347,127 @@ interface GigabitEthernet0/0.40
 
 interface GigabitEthernet0/0
  no shutdown
+```
+---
+# Conexión entre dos ciudades
+
+Este proyecto conecta múltiples casas distribuidas en dos ciudades remotas mediante routers intermedios y una nube WAN. Cada casa tiene su red local (LAN) y está conectada a un router local, que a su vez está conectado a un router de interconexión. Las comunicaciones entre ciudades se realizan a través de una red WAN basada en conexiones seriales y una nube Frame Relay.
+
+---
+
+## Direccionamiento IP por Casa
+
+### Ciudad A
+
+**CASA 1** - Red: `192.168.10.0/24`
+- PC0: `192.168.10.3`
+- PC1: `192.168.10.2`
+- Router14:
+  - Gbit0/0: `192.168.10.1`
+  - Serial0/0/0: `10.0.0.1`
+
+**CASA 2** - Red: `192.168.11.0/24`
+- PC2: `192.168.11.2`
+- Laptop0: `192.168.11.3`
+- Router15:
+  - Gbit0/0: `192.168.11.1`
+  - Serial0/0/0: `10.0.0.5`
+
+**CASA 3** - Red: `192.168.12.0/24`
+- Laptop1: `192.168.12.3`
+- PC3: `192.168.12.2`
+- Router16:
+  - Gbit0/0: `192.168.12.1`
+  - Serial0/0/0: `10.0.0.9`
+
+**CASA 4** - Red: `192.168.13.0/24`
+- PC4: `192.168.13.2`
+- PC5: `192.168.13.3`
+- Router17:
+  - Gbit0/0: `192.168.13.1`
+  - Serial0/0/0: `10.0.0.13`
+
+---
+
+### Ciudad B
+
+**CASA 5** - Red: `192.168.14.0/24`
+- PC6: `192.168.14.3`
+- PC7: `192.168.14.2`
+- Router18:
+  - Gbit0/0: `192.168.14.1`
+  - Serial0/0/0: `10.0.1.1`
+
+**CASA 6** - Red: `192.168.15.0/24`
+- PC8: `192.168.15.2`
+- Laptop2: `192.168.15.3`
+- Router19:
+  - Gbit0/0: `192.168.15.1`
+  - Serial0/0/0: `10.0.1.5`
+
+**CASA 7** - Red: `192.168.16.0/24`
+- Laptop3: `192.168.16.2`
+- PC9: `192.168.16.3`
+- Router20:
+  - Gbit0/0: `192.168.16.1`
+  - Serial0/0/0: `10.0.1.9`
+
+**CASA 8** - Red: `192.168.17.0/24`
+- PC10: `192.168.17.2`
+- PC11: `192.168.17.3`
+- Router21:
+  - Gbit0/0: `192.168.17.1`
+  - Serial0/0/0: `10.0.1.13`
+
+---
+
+## Routers de Interconexión
+
+**Router22**
+- Serial0/1/0: `10.0.0.21`
+- Serial0/1/1: `10.0.0.2`
+- Serial0/2/0: `10.0.0.6`
+- Serial0/2/1: `10.0.0.17`
+
+**Router7**
+- Serial0/1/0: `10.0.0.18`
+- Serial0/1/1: `10.0.0.25`
+- Serial0/2/0: `10.0.0.14`
+- Serial0/2/1: `10.0.0.10`
+
+**Router8**
+- Serial0/1/0: `10.0.2.1` (conexión WAN)
+- Serial0/1/1: `10.0.0.26`
+- Serial0/2/0: `10.0.0.22`
+
+**Router9**
+- Serial0/1/0: `10.0.2.2` (conexión WAN)
+- Serial0/1/1: `10.0.1.18`
+- Serial0/2/0: `10.0.1.22`
+
+**Router0**
+- Serial0/1/0: `10.0.1.25`
+- Serial0/1/1: `10.0.1.17`
+- Serial0/2/0: `10.0.1.2`
+- Serial0/2/1: `10.0.1.6`
+
+**Router23**
+- Serial0/1/0: `10.0.1.21`
+- Serial0/1/1: `10.0.1.10`
+- Serial0/2/0: `10.0.1.14`
+- Serial0/2/1: `10.0.1.26`
+
+---
+
+## Resumen de Configuración
+
+- Cada casa tiene una red LAN con su router.
+- Los routers domésticos están conectados a routers intermedios para cada ciudad.
+- Las ciudades están interconectadas por routers centrales (Router8 y Router9) mediante una **nube WAN (10.0.2.0/24)**.
+- Direccionamiento jerarquizado:
+  - **10.0.0.0/24** → conexiones seriales de Ciudad A
+  - **10.0.1.0/24** → conexiones seriales de Ciudad B
+  - **10.0.2.0/24** → enlace entre ciudades
+- Todas las comunicaciones están enrutadas estáticamente mediante comandos `ip route`.
+
+---
