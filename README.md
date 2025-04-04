@@ -348,6 +348,7 @@ interface GigabitEthernet0/0.40
 interface GigabitEthernet0/0
  no shutdown
 ```
+
 ---
 # Conexión entre dos ciudades
 
@@ -472,5 +473,6 @@ Este proyecto conecta múltiples casas distribuidas en dos ciudades remotas medi
   - **10.0.1.0/24** → conexiones seriales de Ciudad B
   - **10.0.2.0/24** → enlace entre ciudades
 - Todas las comunicaciones están enrutadas estáticamente mediante comandos `ip route`.
+- Se han probado pings entre ambas ciudades llegando a los dispositivos correctamente 
 
 ---
