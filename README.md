@@ -245,6 +245,41 @@ Una **tabla de enrutamiento** es una estructura interna que contiene las rutas c
 | Idóneo para                | Redes pequeñas y estables            | Redes grandes y en constante cambio    |
 
 
+![Comparison of TCP and UDP Processes - visual selection](https://github.com/user-attachments/assets/51d9b356-50fc-4da4-af22-0ad18f678bd3)
 
+
+---
+
+# NAT (Network Address Translation)
+
+## ¿Qué técnica representa?
+
+La técnica descrita es **NAT (Network Address Translation)**, un mecanismo de red que permite que múltiples dispositivos dentro de una red privada accedan a redes externas (como Internet) usando una única dirección IP pública.
+
+---
+
+## ¿Qué es NAT?
+
+**NAT** es un proceso que modifica las direcciones IP de los paquetes que pasan a través de un router u otro dispositivo de red. Permite que los dispositivos de una red privada utilicen direcciones privadas (no enrutable en Internet) y, al salir a Internet, estas se traduzcan en una única dirección IP pública.
+
+---
+
+## ¿Cómo funciona?
+
+1. Un dispositivo interno (por ejemplo, con dirección 192.168.1.10) envía un paquete hacia una dirección externa (por ejemplo, 8.8.8.8).
+2. El router con NAT reemplaza la dirección IP de origen del paquete (192.168.1.10) por su dirección IP pública (por ejemplo, 203.0.113.1).
+3. El router guarda esta traducción en una tabla de NAT (asocia la IP interna y el puerto con la IP pública y un puerto asignado).
+4. Cuando el servidor externo responde, el router consulta la tabla y reenvía la respuesta al dispositivo interno correspondiente.
+
+Este proceso se conoce como **NAT dinámico** o **PAT (Port Address Translation)** cuando se usan puertos para distinguir entre múltiples conexiones salientes.
+
+---
+
+## Beneficios de NAT
+
+1. **Ahorro de direcciones IPv4 públicas:** Permite que cientos de dispositivos compartan una sola IP pública.
+2. **Seguridad básica:** Oculta las direcciones IP internas de los dispositivos, dificultando accesos directos desde el exterior.
+
+![Comparison of TCP and UDP Processes - visual selection](https://github.com/user-attachments/assets/075de474-9d9a-4bf0-b61d-ed9e78490fa4)
 
 ---
