@@ -189,4 +189,62 @@ Una red `/26` deja **6 bits para hosts**:
 
 ---
 
+# Routers, Tablas de Enrutamiento y Tipos de Enrutamiento
 
+## ¿Qué es un router?
+
+Un **router** (enrutador) es un dispositivo de red que se encarga de **encaminar paquetes de datos** entre diferentes redes. Su función principal es recibir un paquete, examinar su dirección de destino, y decidir hacia qué interfaz de red reenviarlo, basándose en su **tabla de enrutamiento**.
+
+### Características prácticas de un router:
+- Conecta redes diferentes (por ejemplo, una red local a Internet).
+- Decide la ruta más adecuada para los paquetes de datos.
+- Opera principalmente en la **capa 3 (Red)** del modelo OSI.
+- Puede aplicar políticas de seguridad, NAT, QoS, filtrado de tráfico, etc.
+- Soporta tanto **enrutamiento estático** como **dinámico**.
+
+---
+
+## ¿Qué es una tabla de enrutamiento?
+
+Una **tabla de enrutamiento** es una estructura interna que contiene las rutas conocidas por el router y las decisiones que debe tomar para reenviar paquetes hacia sus destinos. Cada entrada define cómo alcanzar una red específica.
+
+### Elementos comunes de una tabla de enrutamiento:
+- **Red de destino**: dirección IP y máscara.
+- **Máscara o prefijo**: determina el tamaño de la red.
+- **Próximo salto (next hop)**: dirección IP del siguiente router en la ruta.
+- **Interfaz de salida**: la interfaz por la cual debe salir el paquete.
+- **Métrica**: valor que ayuda a elegir la mejor ruta cuando hay varias.
+
+---
+
+## Ejemplo de tabla de enrutamiento
+
+| Destino          | Máscara        | Next Hop        | Interfaz | Métrica |
+|------------------|----------------|------------------|----------|---------|
+| 192.168.1.0      | 255.255.255.0  | 0.0.0.0 (directo) | eth0     | 1       |
+| 10.0.0.0         | 255.0.0.0      | 192.168.1.2       | eth1     | 2       |
+| 0.0.0.0 (default)| 0.0.0.0        | 192.168.1.1       | eth0     | 10      |
+
+### ¿Cómo funciona?
+- Si un paquete llega con destino `10.5.4.3`, el router busca la entrada más específica en la tabla.
+- Coincide con `10.0.0.0/8`, así que lo reenvía a través de `eth1` al next hop `192.168.1.2`.
+- Si no encuentra una coincidencia específica, usa la **ruta por defecto (default route)**.
+
+---
+
+## Enrutamiento Estático vs Dinámico
+
+| Característica             | Enrutamiento Estático                | Enrutamiento Dinámico                  |
+|---------------------------|--------------------------------------|----------------------------------------|
+| Configuración              | Manual (por el administrador)       | Automática (mediante protocolos)       |
+| Flexibilidad               | Baja                                 | Alta                                   |
+| Complejidad                | Simple de implementar                | Más compleja                          |
+| Adaptación a cambios       | No se adapta automáticamente         | Se ajusta automáticamente              |
+| Uso de CPU/memoria         | Bajo                                 | Requiere más recursos                  |
+| Protocolos utilizados      | No usa protocolos                    | RIP, OSPF, EIGRP, BGP, etc.            |
+| Idóneo para                | Redes pequeñas y estables            | Redes grandes y en constante cambio    |
+
+
+
+
+---
