@@ -306,12 +306,12 @@ Este proyecto simula una red con múltiples VLANs separadas por roles o departam
 
 ## Configuración de Subredes y Subinterfaces
 
-| VLAN | Nombre       | Subred            | Dispositivos         | IPs de Dispositivos | IP del Router |
-|------|--------------|-------------------|-----------------------|---------------------|----------------|
-| 10   | Arquitectos  | 192.168.10.0/24   | PC0, PC1              | .2, .3               | 192.168.10.1   |
-| 20   | Escribas     | 192.168.20.0/24   | PC2, PC3              | .2, .3               | 192.168.20.1   |
-| 30   | Comercio     | 192.168.30.0/24   | Smartphone2, Smartphone4 | .2, .3           | 192.168.30.1   |
-| 40   | Mercaderes   | 192.168.40.0/24   | Servidor              | .2                   | 192.168.40.1   |
+| VLAN | Nombre       | Subred            | Dispositivos         | IPs de Dispositivos | IP de la subinterfazRouter |
+|------|--------------|-------------------|-----------------------|---------------------|---------------------------|
+| 10   | Arquitectos  | 192.168.10.0/24   | PC0, PC3              |  .2, .3               |     192.168.10.1       |
+| 20   | Escribas     | 192.168.20.0/24   | PC1, PC2              | .2, .3               |     192.168.20.1       |
+| 30   | Comercio     | 192.168.30.0/24   | Smartphone2, Smartphone4 | .2, .3           |     192.168.30.1       |
+| 40   | Mercaderes   | 192.168.40.0/24   | Servidor              | .2                   |     192.168.40.1       |
 
 ---
 
