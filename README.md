@@ -70,4 +70,9 @@ El modelo OSI (Open Systems Interconnection) es un marco de referencia conceptua
 | Uso en la industria       | Más utilizado para enseñanza      | Base real de Internet             |
 | Independencia de protocolo| Sí                                | No, está ligado a la pila TCP/IP  |
 
+
+
+![Technical Diagram of Data Transmission through the OSI Model - visual selection](https://github.com/user-attachments/assets/35699303-b0f2-42d3-b760-771b5faef1a7)
+
+
 ---
