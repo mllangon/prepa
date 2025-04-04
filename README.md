@@ -72,7 +72,8 @@ El modelo OSI (Open Systems Interconnection) es un marco de referencia conceptua
 
 
 
-![Technical Diagram of Data Transmission through the OSI Model - visual selection](https://github.com/user-attachments/assets/35699303-b0f2-42d3-b760-771b5faef1a7)
+![Technical Diagram of Data Transmission through the OSI Model - visual selection](https://github.com/user-attachments/assets/8c5c75be-b8d2-4b4c-8617-66884b7dd264)
+
 
 
 ---
