@@ -245,7 +245,8 @@ Una **tabla de enrutamiento** es una estructura interna que contiene las rutas c
 | Idóneo para                | Redes pequeñas y estables            | Redes grandes y en constante cambio    |
 
 
-![Comparison of TCP and UDP Processes - visual selection](https://github.com/user-attachments/assets/51d9b356-50fc-4da4-af22-0ad18f678bd3)
+![Technical Diagram of a Router with Routing Table - visual selection](https://github.com/user-attachments/assets/c468d72f-44cd-410c-a31d-6f2f589ce4ec)
+
 
 
 ---
@@ -280,6 +281,7 @@ Este proceso se conoce como **NAT dinámico** o **PAT (Port Address Translation)
 1. **Ahorro de direcciones IPv4 públicas:** Permite que cientos de dispositivos compartan una sola IP pública.
 2. **Seguridad básica:** Oculta las direcciones IP internas de los dispositivos, dificultando accesos directos desde el exterior.
 
-![Comparison of TCP and UDP Processes - visual selection](https://github.com/user-attachments/assets/075de474-9d9a-4bf0-b61d-ed9e78490fa4)
+![Understanding Network Address Translation (NAT) - visual selection](https://github.com/user-attachments/assets/91415af0-a364-4dc5-8805-189f9f929d6c)
+
 
 ---
