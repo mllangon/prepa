@@ -75,5 +75,68 @@ El modelo OSI (Open Systems Interconnection) es un marco de referencia conceptua
 ![Technical Diagram of Data Transmission through the OSI Model - visual selection](https://github.com/user-attachments/assets/8c5c75be-b8d2-4b4c-8617-66884b7dd264)
 
 
+---
+# Procesos TCP y UDP: Definición Técnico-Práctica
+
+En el modelo de comunicaciones de redes, los protocolos TCP y UDP pertenecen a la **Capa de Transporte**. Ambos permiten que los datos se transmitan entre aplicaciones en diferentes dispositivos a través de la red, pero tienen diferencias clave en cuanto a fiabilidad, velocidad y complejidad.
+
+---
+
+## TCP (Transmission Control Protocol)
+
+**Definición:**  
+TCP es un protocolo orientado a la conexión que proporciona una comunicación fiable y ordenada entre dos dispositivos. Asegura que los datos lleguen completos, en orden y sin errores.
+
+**Características:**
+- Establece una conexión mediante el proceso de **Three-Way Handshake**.
+- Proporciona control de flujo y control de congestión.
+- Los datos se dividen en **segmentos**.
+- Garantiza la entrega de los datos y su reordenamiento si llegan desordenados.
+- Reconocimiento de paquetes mediante **ACKs (Acknowledgements)**.
+- Utiliza números de secuencia.
+- Más lento debido al procesamiento adicional, pero confiable.
+
+**Aplicaciones comunes:**
+- Navegadores web (HTTP/HTTPS)
+- Email (SMTP, IMAP)
+- Transferencia de archivos (FTP)
+
+---
+
+## UDP (User Datagram Protocol)
+
+**Definición:**  
+UDP es un protocolo no orientado a la conexión que proporciona una comunicación rápida sin garantizar la entrega o el orden de los datos. Se usa cuando la velocidad es prioritaria frente a la fiabilidad.
+
+**Características:**
+- No establece conexión previa.
+- No ofrece control de flujo ni congestión.
+- Los datos se envían como **datagramas** individuales.
+- No se realiza comprobación de entrega ni reintentos.
+- Bajo retardo y menor sobrecarga de red.
+- Puede perder paquetes sin notificar.
+
+**Aplicaciones comunes:**
+- Transmisiones en tiempo real (video/audio)
+- Juegos en línea
+- DNS (consulta rápida)
+- VoIP
+
+---
+
+## Comparación entre TCP y UDP
+
+| Característica            | TCP                               | UDP                             |
+|---------------------------|------------------------------------|----------------------------------|
+| Tipo de conexión          | Orientado a conexión               | No orientado a conexión          |
+| Fiabilidad                | Alta (garantiza entrega y orden)  | Baja (no garantiza entrega)      |
+| Velocidad                 | Más lento                         | Más rápido                       |
+| Tamaño de encabezado      | Mayor (20 bytes o más)            | Menor (8 bytes)                  |
+| Control de flujo/congestión | Sí                              | No                               |
+| Reordenamiento de datos   | Sí                                | No                               |
+| Uso típico                | HTTP, FTP, Email                  | Streaming, DNS, Juegos en línea  |
+
+
+
 
 ---
