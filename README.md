@@ -457,6 +457,9 @@ Este proyecto conecta múltiples casas distribuidas en dos ciudades remotas medi
 - Serial0/2/0: `10.0.1.14`
 - Serial0/2/1: `10.0.1.26`
 
+**Cloud**
+-a router 9 y 8 a traves de serial 0 y 1 del cloud
+
 ---
 
 ## Resumen de Configuración
