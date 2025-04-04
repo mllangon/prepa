@@ -286,13 +286,13 @@ Este proceso se conoce como **NAT dinámico** o **PAT (Port Address Translation)
 
 ---
 
-#Proyecto de VLANs con Router-on-a-Stick
+# Proyecto de VLANs con Router-on-a-Stick
 
 Este proyecto simula una red con múltiples VLANs separadas por roles o departamentos: Arquitectos, Escribas, Comercio y Mercaderes. Todas las VLANs están interconectadas a través de un router configurado como **Router-on-a-Stick**, el cual enruta el tráfico entre ellas utilizando subinterfaces.
 
 ---
 
-##Topología de Red
+## Topología de Red
 
 - **Router**: Router-on-a-Stick (modelo 1941)
 - **Switch central**: 2960-24TT
@@ -304,7 +304,7 @@ Este proyecto simula una red con múltiples VLANs separadas por roles o departam
 
 ---
 
-##Configuración de Subredes y Subinterfaces
+## Configuración de Subredes y Subinterfaces
 
 | VLAN | Nombre       | Subred            | Dispositivos         | IPs de Dispositivos | IP del Router |
 |------|--------------|-------------------|-----------------------|---------------------|----------------|
@@ -315,7 +315,7 @@ Este proyecto simula una red con múltiples VLANs separadas por roles o departam
 
 ---
 
-##Configuración del Router
+## Configuración del Router
 
 ```bash
 enable
