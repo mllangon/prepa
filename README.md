@@ -139,5 +139,54 @@ UDP es un protocolo no orientado a la conexión que proporciona una comunicació
 
 ![Comparison of TCP and UDP Processes - visual selection](https://github.com/user-attachments/assets/097c3860-c786-426e-994d-ec9b2cc0722f)
 
+---
+
+# División de la red 192.168.50.0 en 4 subredes iguales
+
+## Dirección base
+- Dirección de red: `192.168.50.0`
+- Clase: C (por pertenecer al rango 192.0.0.0 - 223.255.255.255)
+- Máscara por defecto de clase C: `/24` o `255.255.255.0`
+
+## Objetivo
+Dividir la red `192.168.50.0/24` en **4 subredes de igual tamaño**.
+
+### Paso 1: Determinar cuántos bits se necesitan para dividir en 4 subredes
+Para dividir en subredes, se toman bits prestados de la porción de **host** de la dirección. En una red /24, hay 8 bits disponibles para host (último octeto).
+
+Para obtener al menos 4 subredes:
+- 2 bits → 2² = 4 subredes (mínimo requerido)
+
+Entonces, nueva máscara:
+- `/24` + 2 bits = `/26`
+- Máscara: `255.255.255.192`
+
+### Paso 2: Calcular el número de direcciones por subred
+Una red `/26` deja **6 bits para hosts**:
+- 2⁶ = 64 direcciones por subred
+- Direcciones utilizables = 64 - 2 = **62 hosts por subred**
+  - (Se resta 1 para la dirección de red y 1 para la dirección de broadcast)
+
+## Resultado
+
+| Parámetro                        | Valor                   |
+|----------------------------------|--------------------------|
+| Nueva máscara de subred         | `/26` o `255.255.255.192` |
+| Total de subredes posibles      | 4                        |
+| Direcciones por subred          | 64                       |
+| Direcciones de host utilizables | 62                       |
+
+## Subredes resultantes
+
+| Subred         | Rango de hosts            | Broadcast         |
+|----------------|---------------------------|-------------------|
+| 192.168.50.0/26  | 192.168.50.1 - 192.168.50.62  | 192.168.50.63    |
+| 192.168.50.64/26 | 192.168.50.65 - 192.168.50.126 | 192.168.50.127   |
+| 192.168.50.128/26| 192.168.50.129 - 192.168.50.190| 192.168.50.191   |
+| 192.168.50.192/26| 192.168.50.193 - 192.168.50.254| 192.168.50.255   |
+
+
 
 ---
+
+
